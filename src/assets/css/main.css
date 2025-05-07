@@ -180,13 +180,3 @@ a:hover {
     height: 300px;
   }
 }
-
-/* Only apply max-width to images NOT in the header */
-body:not(header) img {
-  max-width: 100%;
-}
-
-/* Logo in header keeps its original size */
-header img {
-  width: 200px;
-}
