@@ -23,7 +23,7 @@ module.exports = function(eleventyConfig) {
   return {
     dir: {
       input: "src",
-      output: "public",
+      output: "https://joyful-rabanadas-e4f399.netlify.app/",
       includes: "_includes",
       data: "_data"
     },
