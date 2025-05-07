@@ -181,7 +181,14 @@ a:hover {
   }
 }
 
+/* Global rule (applies to all images) */
 img {
   max-width: 100%;
   height: auto;
+}
+
+/* Exception for the logo */
+img.logo {
+  max-width: none;  /* Removes the restriction */
+  width: 200px;     /* Set a fixed size (adjust as needed) */
 }
