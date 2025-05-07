@@ -180,3 +180,9 @@ a:hover {
     height: 300px;
   }
 }
+
+.logo {
+  width: 120px; /* Fixed size */
+  height: auto; /* Adjust height proportionally */
+  max-width: none; /* Override global max-width */
+}
