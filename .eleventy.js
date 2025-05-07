@@ -23,7 +23,7 @@ module.exports = function(eleventyConfig) {
   return {
     dir: {
       input: "src",
-      output: "joyful-rabanadas-e4f399",
+      output: "public",
       includes: "_includes",
       data: "_data"
     },
