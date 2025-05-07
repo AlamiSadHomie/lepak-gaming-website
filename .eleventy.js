@@ -1,6 +1,7 @@
 module.exports = function(eleventyConfig) {
   // Copy the `assets` directory to the output
   eleventyConfig.addPassthroughCopy("src/assets/images");
+  eleventyConfig.addPassthroughCopy("src/assets/css");
   
   // Custom date formatting filter
   eleventyConfig.addFilter("dateFormat", function(date) {
