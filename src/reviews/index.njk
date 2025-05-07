@@ -1,0 +1,113 @@
+---
+layout: layouts/base.njk
+title: Game Reviews
+---
+
+<div class="reviews-header mb-5">
+  <h1 class="display-4 mb-4">Game Reviews</h1>
+  <p class="lead">Honest, in-depth reviews of the latest and greatest games across all platforms.</p>
+  
+  <!-- Filter Buttons -->
+  <div class="filter-container mt-4">
+    <div class="d-flex flex-wrap gap-2">
+      <button class="btn btn-primary filter-btn active" data-filter="all">All Games</button>
+      <button class="btn btn-outline-primary filter-btn" data-filter="pc">PC</button>
+      <button class="btn btn-outline-primary filter-btn" data-filter="playstation">PlayStation</button>
+      <button class="btn btn-outline-primary filter-btn" data-filter="xbox">Xbox</button>
+      <button class="btn btn-outline-primary filter-btn" data-filter="switch">Nintendo Switch</button>
+      <button class="btn btn-outline-primary filter-btn" data-filter="mobile">Mobile</button>
+    </div>
+    
+    <div class="dropdown mt-3">
+      <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="genreDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+        Filter by Genre
+      </button>
+      <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="genreDropdown">
+        <li><button class="dropdown-item filter-btn" data-filter="all">All Genres</button></li>
+        <li><button class="dropdown-item filter-btn" data-filter="action">Action</button></li>
+        <li><button class="dropdown-item filter-btn" data-filter="adventure">Adventure</button></li>
+        <li><button class="dropdown-item filter-btn" data-filter="rpg">RPG</button></li>
+        <li><button class="dropdown-item filter-btn" data-filter="strategy">Strategy</button></li>
+        <li><button class="dropdown-item filter-btn" data-filter="simulation">Simulation</button></li>
+        <li><button class="dropdown-item filter-btn" data-filter="sports">Sports</button></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Reviews Grid -->
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  {%- for review in collections.reviews | reverse -%}
+  <div class="col animate-on-scroll game-card" data-category="{{ review.data.platform | slug }}" data-genre="{{ review.data.genre | slug }}">
+    <div class="card h-100">
+      <span class="rating-badge badge bg-warning text-dark">{{ review.data.rating }}</span>
+      {% if review.data.featuredImage %}
+      <img src="{{ review.data.featuredImage }}" class="card-img-top" alt="{{ review.data.title }}">
+      {% else %}
+      <img src="/assets/images/placeholder.jpg" class="card-img-top" alt="{{ review.data.title }}">
+      {% endif %}
+      <div class="card-body">
+        <h5 class="card-title">{{ review.data.title }}</h5>
+        <p class="card-text text-muted">
+          {% if review.data.tags %}
+          {{ review.data.tags | join(", ") }}
+          {% endif %}
+        </p>
+        <p class="card-text">{{ review.data.description or review.excerpt }}</p>
+      </div>
+      <div class="card-footer bg-transparent border-top border-secondary d-flex justify-content-between">
+        <small class="text-muted">Reviewed on {{ review.date | dateFormat }}</small>
+        <a href="{{ review.url }}" class="btn btn-sm btn-outline-primary">Read Review</a>
+      </div>
+    </div>
+  </div>
+  {%- endfor -%}
+  
+  <!-- If no reviews exist yet, show placeholder content -->
+  {% if collections.reviews.length === 0 %}
+  <div class="col">
+    <div class="card h-100">
+      <span class="rating-badge badge bg-warning text-dark">9.5</span>
+      <img src="/assets/images/placeholder.jpg" class="card-img-top" alt="Sample Game">
+      <div class="card-body">
+        <h5 class="card-title">Sample Game Title</h5>
+        <p class="card-text text-muted">Action, Adventure • PS5</p>
+        <p class="card-text">This is a placeholder for your first review. Click the button below to see a sample review.</p>
+      </div>
+      <div class="card-footer bg-transparent border-top border-secondary">
+        <a href="/reviews/sample-game-title/" class="btn btn-sm btn-outline-primary">Read Sample Review</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col">
+    <div class="card h-100">
+      <span class="rating-badge badge bg-warning text-dark">8.0</span>
+      <img src="/assets/images/placeholder.jpg" class="card-img-top" alt="Sample Game 2">
+      <div class="card-body">
+        <h5 class="card-title">Another Game Example</h5>
+        <p class="card-text text-muted">RPG • PC</p>
+        <p class="card-text">This is another placeholder. Add your own reviews by creating markdown files in the reviews folder.</p>
+      </div>
+      <div class="card-footer bg-transparent border-top border-secondary">
+        <small class="text-muted">Placeholder</small>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+</div>
+
+<!-- Pagination (for when you have many reviews) -->
+<nav class="mt-5">
+  <ul class="pagination justify-content-center">
+    <li class="page-item disabled">
+      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+    </li>
+    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>

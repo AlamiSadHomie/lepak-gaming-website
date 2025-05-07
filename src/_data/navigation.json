@@ -1,0 +1,38 @@
+{
+  "main": [
+    {
+      "text": "Home",
+      "url": "/"
+    },
+    {
+      "text": "Reviews",
+      "url": "/reviews/"
+    },
+    {
+      "text": "News",
+      "url": "/news/"
+    },
+    {
+      "text": "Features",
+      "url": "/features/"
+    },
+    {
+      "text": "Guides",
+      "url": "/guides/"
+    },
+    {
+      "text": "About",
+      "url": "/about/"
+    }
+  ],
+  "footer": [
+    {
+      "text": "Privacy Policy",
+      "url": "/privacy/"
+    },
+    {
+      "text": "Contact",
+      "url": "/contact/"
+    }
+  ]
+}

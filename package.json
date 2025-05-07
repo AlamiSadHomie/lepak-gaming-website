@@ -1,0 +1,22 @@
+{
+  "name": "lepak-gaming",
+  "version": "1.0.0",
+  "description": "Personal gaming website with reviews and news",
+  "main": "index.js",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "keywords": [
+    "gaming",
+    "reviews",
+    "news",
+    "11ty"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "nunjucks": "^3.2.4"
+  }
+}

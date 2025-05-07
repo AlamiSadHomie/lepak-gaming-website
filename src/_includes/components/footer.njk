@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <h5>{{ site.name }}</h5>
+      <p>{{ site.description }}</p>
+    </div>
+    <div class="col-md-4">
+      <h5>Sections</h5>
+      <ul class="list-unstyled">
+        {% for item in navigation.main %}
+        <li><a href="{{ item.url }}" class="text-decoration-none text-light">{{ item.text }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <h5>Connect</h5>
+      <div class="social-icons">
+        {% if site.social.twitter %}
+        <a href="{{ site.social.twitter }}" class="text-light me-3"><i class="fab fa-twitter"></i></a>
+        {% endif %}
+        {% if site.social.instagram %}
+        <a href="{{ site.social.instagram }}" class="text-light me-3"><i class="fab fa-instagram"></i></a>
+        {% endif %}
+        {% if site.social.youtube %}
+        <a href="{{ site.social.youtube }}" class="text-light me-3"><i class="fab fa-youtube"></i></a>
+        {% endif %}
+        {% if site.social.discord %}
+        <a href="{{ site.social.discord }}" class="text-light me-3"><i class="fab fa-discord"></i></a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col text-center">
+<small>&copy; {{ site.name }} 2025. All rights reserved.</small>  </div>
+</div>

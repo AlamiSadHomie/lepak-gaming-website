@@ -1,0 +1,182 @@
+/* Gaming Website Custom Styles */
+
+/* Common Variables */
+:root {
+  --primary-color: #6c5ce7;      /* Purple */
+  --secondary-color: #00b894;    /* Green */
+  --accent-color: #fdcb6e;       /* Yellow */
+  --danger-color: #d63031;       /* Red */
+  --dark-color: #1e1e2e;         /* Dark background */
+  --darker-color: #121218;       /* Darker background */
+  --light-text: #e2e2e2;         /* Light text */
+  --muted-text: #a0a0a0;         /* Muted text */
+}
+
+/* Base Styles */
+body {
+  background-color: var(--darker-color);
+  color: var(--light-text);
+  font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Override Bootstrap dark theme */
+.bg-dark {
+  background-color: var(--dark-color) !important;
+}
+
+/* Links */
+a {
+  color: var(--primary-color);
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+/* Navigation */
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.nav-link {
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  padding: 0.5rem 1rem !important;
+  position: relative;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: var(--light-text);
+}
+
+.nav-link.active::after,
+.nav-link:hover::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 1rem;
+  right: 1rem;
+  height: 2px;
+  background-color: var(--secondary-color);
+}
+
+/* Cards */
+.card {
+  background-color: var(--dark-color);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card-title {
+  font-weight: 700;
+}
+
+/* Game cards */
+.game-card {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.game-card .card-img-top {
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.game-card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+.game-card .rating-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-weight: bold;
+}
+
+/* Reviews */
+.review-summary {
+  background-color: rgba(30, 30, 46, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+.verdict {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* News Items */
+.news-date {
+  color: var(--muted-text);
+  font-size: 0.9rem;
+}
+
+/* Featured Content */
+.featured-content {
+  position: relative;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  height: 400px;
+}
+
+.featured-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.featured-content .content-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0));
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--darker-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .featured-content {
+    height: 300px;
+  }
+}

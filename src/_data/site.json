@@ -1,0 +1,16 @@
+{
+  "name": "Lepak Gaming",
+  "description": "Your go-to spot for honest game reviews, news, and tips!",
+  "url": "https://lepakgaming.com",
+  "authorName": "Nafiz Mazlan",
+  "authorBio": "Lorem Ipsum",
+  "social": {
+    "twitter": "https://twitter.com/yourusername",
+    "instagram": "https://instagram.com/yourusername",
+    "youtube": "https://youtube.com/c/yourusername",
+    "discord": "https://discord.gg/yourinvite"
+  },
+  "footer": {
+    "text": "Lorem Ipsum"
+  }
+}
